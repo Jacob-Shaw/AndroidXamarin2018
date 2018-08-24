@@ -17,6 +17,8 @@ namespace Week1
 
             Car myCar = new Car();
             myCar.Color = "Green";
+            myCar.OpenDoor();
+            myCar.CloseWindow();
 
         }
     }
