@@ -1,6 +1,8 @@
-﻿using System;
-using Week1.Week2;
+﻿//This is a directory for all of my classwork and homework done in Visual Studio Code
 
+using System;
+using System.Timers;
+using ClassMaterial.Week1;
 
 namespace Week1
 {
@@ -8,123 +10,107 @@ namespace Week1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Vehicle vehicle = new Vehicle("Chevy");
-            vehicle.Color = "Blue";
+            //   ***MAINTENANCE***: 
+            //        1.  Change "sbyte NumberofWeeks" below to the exact number 
+            //          of weeks of work (example: 3 for 3 weeks). 
+            //        2.  Add appropriate selections to the "switch(_choice)" below
 
-            Vehicle myVehicle = new Vehicle();
-            myVehicle.Color = "Red";
-            //Console.WriteLine(myVehicle.Color);
-            myVehicle.OpenDoor();
-
-            Car myCar = new Car();
-            myCar.Color = "Green";
-            myCar.OpenDoor();
-            myCar.CloseWindow();
-
-
-            // This is the start of my Homework
-
-            int MyNumber = 2;
-
-            int AddOne(int x)
-            {
-                x += 1;
-                return x;
-            }
-
-            int AddTwo(ref int x)
-            {
-                x += 2;
-                return x; 
-            }
-
-            Console.WriteLine("Listen to my bikes make noise!");
-
-            Bicycle MyBike = new Bicycle();
-
-            MyBike.RingBell();
-
-            Harley MyHarley = new Harley();
-
-            MyHarley.RingBell();
-
-            //Demonstrates inheritance of brand from Bicycle class
-            Console.WriteLine("Let me check the headlight on my " + MyHarley.Brand + ".");
-
-            if (MyHarley.HeadLightOn == true)
-            {
-                Console.WriteLine("The headlight is on.");
-            }
-            else
-            {
-                Console.WriteLine("The headlight is off.");  
-            }
-
-            Console.WriteLine("Let me change that.");
-
-            MyHarley.HeadLightOn = (!MyHarley.HeadLightOn);
-
-            Console.WriteLine("Time for some Math:");
-
-            Console.WriteLine("We will start with my number of bikes which is " + MyNumber + ".");
-
-            //This will send the value of MyNumber to the AddOne Method
-            Console.WriteLine("One more than the number of my bikes is " + AddOne(MyNumber) + ".");
-
-            //This demonstrates that MyNumber is not changed because it was passed by value to AddOne
-            Console.WriteLine("The number of bikes I own is still " + MyNumber + ".");
-
-            Console.WriteLine("Now I am going to buy 2 more bikes.");
-
-            //The reference of MyNumber will be used in the AddTwo Method
-            Console.WriteLine("Now I own " + AddTwo(ref MyNumber) + " bikes.");
-
-            //This proves that MyNumber has changed because it was sent by reference to AddTwo
-            Console.WriteLine("The number of bikes I own is " + MyNumber + ".");
-
-            /*const int ArrayCheck = 4;
-
-            Console.WriteLine("hi {ArrayCheck - 2}", "aaa","bbb","ccc","ddd");
-            */
+            //  *****Update the initialization value to match number of class weeks*****
+            //Array of number of weeks of classwork
+            sbyte NumberofWeeks = 3;
             
-            ReferenceTypes myNewRef = new ReferenceTypes();
-            myNewRef.ArrayJaggedSample();
+            //This variable will check to see if a choice from 
+            //  the menu has been made
+            bool _choiceMade = false;       
 
-
-
-
-            // Homework Week 2
-
-            /* Accept a grade and get back a description of the grade. 
-            If a grade entered is not correct, display a message 
-            that it is not a valid grade. */
-
-            string[] grades = { "Excellent", "Very Good", "Good", "Average", "Fail" };
-            
-            GradeDescriptions Gradelist = new GradeDescriptions();
-
-            Gradelist.GetGradeDescription(grades);
-
-            //Display the first 10 natural numbers
-            Console.WriteLine("\n" + "The first 10 natural numbers are:");
-
-            int numbersToDisplay = 10;
-
-
-            for(int i = 1; i < (numbersToDisplay + 1) ; i++ )
+            //This will print the menu items
+            while( _choiceMade == false)
             {
-                Console.Write(i);
+                System.Console.WriteLine("     --------");
+                System.Console.WriteLine("       MENU");
+                System.Console.WriteLine("     --------");
 
-                if( i < numbersToDisplay )
+                //Variables for printing
+                sbyte _counter = 1;
+                sbyte _selectionNumber = 1;                
+
+                //Print Menu selections by number
+                while( _selectionNumber < (NumberofWeeks * 2))
                 {
-                    Console.Write(", ");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    System.Console.WriteLine(_selectionNumber++ + ". Week " + _counter + " Classwork");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    System.Console.WriteLine(_selectionNumber++ + ". Week " + _counter++ + " Homework");
                 }
-            }
 
-              
+                //Reset the console to default colors
+                Console.ResetColor();
+
+                System.Console.WriteLine("Please select an item number from the menu");
+                System.Console.WriteLine("or press \"R\" for a random selection");
+                System.Console.WriteLine("and press \"Enter\":");
+                
+                Console.ForegroundColor = ConsoleColor.Blue;                
+
+                string _choice = Console.ReadLine().ToUpper();
+
+                //Allow the user to make a random choice
+                if( _choice == "R")
+                {
+                    Random _luck = new Random();
+
+                    //(min value, max value) min value will be met, but not max value
+                    //   for random numbers
+                    int getRandom = _luck.Next(1,(NumberofWeeks*2+1));
+
+                    _choice = getRandom.ToString();
+                }
+                
+                Console.ResetColor();
+
+                /* This switch will execute the user selection made.
+                    *****Be sure to update!*****  */
+                switch(_choice)
+                {
+                    case "1":
+                        Week1Classwork.RunWeek1Classwork();
+                        _choiceMade = true;
+                        break;
+
+                    case "2":
+                        Week1Homework.RunWeek1Homework();
+                        _choiceMade = true;
+                        break;
+
+                    case "3":
+                        Week2Classwork.RunWeek2Classwork();
+                        _choiceMade = true;
+                        break;
+
+                    case "4":
+                        Week2Homework.RunWeek2Homework();
+                        _choiceMade = true;
+                        break;
+
+                    case "5":
+                        Week3Classwork.RunWeek3Classwork();
+                        _choiceMade = true;
+                        break;
+
+                    case "6":
+                        Week3Homework.RunWeek3Homework();
+                        _choiceMade = true;
+                        break;
+
+                    // *****Add new selections above this line*****
+
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Red ;
+                        Console.WriteLine("\"\a" + _choice + "\"" + " is an invalid selection.");
+                        Console.ResetColor();
+                        break;
+                }                
+            }  
         }
     }
-
-
 } 

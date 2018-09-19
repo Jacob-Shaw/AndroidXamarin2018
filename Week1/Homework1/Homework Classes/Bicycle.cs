@@ -3,7 +3,7 @@ using System;
 
 
 /*This is a class which is basically the blueprints for an object.
-    Every */
+Every */
 public class Bicycle
 {
     //Fields - which are private member variables
@@ -114,4 +114,5 @@ public class Bicycle
     {
         Console.WriteLine("O.K.");
     } 
+    
 }
