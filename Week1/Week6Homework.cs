@@ -6,9 +6,8 @@ namespace ClassMaterial.Week1
 {
     class Week6Homework
     {
-        internal static void RunWeek6Homework()
+        public static void RunWeek6Homework()
         {
-            throw new NotImplementedException();
-        }
+        }   
     }
 }
