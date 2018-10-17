@@ -6,10 +6,10 @@ namespace Fundamentals
 
     {
         private string _teeth;
-        private string _something;
+        //private string _something;
         private int _size;
         public string Color { protected set; get; } = "Green";
-
+         
 
         public int Size 
         { 

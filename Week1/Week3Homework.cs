@@ -4,10 +4,11 @@ using ClassMaterial.Week1.Homework3;
 namespace ClassMaterial.Week1
 {
     public static class Week3Homework
+    
     {
         public static void RunWeek3Homework()
         {
-            System.Console.Clear();
+            System.Console.Clear();            
 
             Homework3.Bicycle MakingBike = new Homework3.Bicycle("Men's", "Schwinn", "Silver", "Alloy", 26, 500.00m, "Floor");
 

@@ -14,32 +14,32 @@ namespace Week1.Week2
         #region Integral - Signed
 
         // range -128 to 127
-        private sbyte _mySbyteValue = 2;
+        //private sbyte _mySbyteValue = 2;
 
         // range -32,768 to 32,767
-        private short _myShortValue = 4;
+        //private short _myShortValue = 4;
 
         // range -2,147,483,648 to 2,147,483,647
         private int _myIntValue = 25000;
 
         // range -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
-        private long _myLongValue = 1_234_567L;
-        private long _myLongValue2 = 0x5F;
+        //private long _myLongValue = 1_234_567L;
+        //private long _myLongValue2 = 0x5F;
         #endregion
 
         #region Integral - Unsigned
 
         // range 0 - 255
-        private byte _myByteValue = 3;
+        //private byte _myByteValue = 3;
 
         // range 0 - 65,535
-        private ushort _myUshortValue = 35;
+        //private ushort _myUshortValue = 35;
 
         // range 0 to 4,294,967,295
-        private uint _myUInt = 2345U;
+        //private uint _myUInt = 2345U;
 
         // range 0 to 18,446,744,073,709,551,615
-        private ulong _myULong = 1234UL;
+        //private ulong _myULong = 1234UL;
         #endregion
 
         #region Real
@@ -48,12 +48,12 @@ namespace Week1.Week2
         private float _myFloatValue = -123.6589F;
 
         // range ±5.0 × 10 superscript−324 to ±1.7 × 10 superscript308
-        private double _myDoubleValue = 12.34D;
-        private double _myDoubleValue2 = 1E06;
-        private double _myDoubleValue3 = 12.34;
+        //private double _myDoubleValue = 12.34D;
+       // private double _myDoubleValue2 = 1E06;
+        //private double _myDoubleValue3 = 12.34;
 
         // range ±1.0 x 10 superscript-28 to ±7.9228 x 10 superscript28
-        private decimal _myDecimalValue = 12.234M;
+        //private decimal _myDecimalValue = 12.234M;
 
         #endregion
 

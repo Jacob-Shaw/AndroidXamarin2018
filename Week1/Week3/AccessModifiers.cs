@@ -48,7 +48,7 @@ namespace Week3
         /*
             Private - Accessible only within the containg type.
          */
-        private string _testString2 = "private normal string";
+        //private string _testString2 = "private normal string";
 
         /*
             Private - Accessible only within the containg type.

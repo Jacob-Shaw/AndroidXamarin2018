@@ -25,7 +25,7 @@ namespace ClassMaterial.Week1.Homework3
 
         private string _location = "UNKNOWN";  //Backstock, Floor, Sold
 
-        private string _previousLocation = "UNKNOWN";
+        //private string _previousLocation = "UNKNOWN";
 
         //This will keep track of the number of Bikes that have been created
         public static int BikesCreated = 0;
