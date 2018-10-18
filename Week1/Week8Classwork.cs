@@ -8,7 +8,7 @@ namespace ClassMaterial.Week1
 {
     public static class Week8Classwork
     {
-        public static void RunWeek7Classwork()
+        public static void RunWeek8Classwork()
         {
             AnonymousTypeExample();
 
