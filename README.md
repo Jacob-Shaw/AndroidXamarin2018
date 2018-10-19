@@ -1,2 +1,2 @@
-# AndroidXamarin2018
-First Github example
+# C Sharp Fundamentals 
+Jacob Shaw
