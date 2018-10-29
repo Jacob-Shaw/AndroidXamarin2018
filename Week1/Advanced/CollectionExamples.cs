@@ -23,7 +23,9 @@ namespace Advanced
             }
         }
 
-            public List <Dinosaur> MyListExample()
+
+        
+            public  List <Dinosaur> MyListExample()
             {
                 List<Dinosaur> myDinos = new List<Dinosaur>();
                 myDinos.Add(new Dinosaur() { Size = 50, Teeth = "Serrated", Skin = true });
@@ -33,12 +35,19 @@ namespace Advanced
                 return myDinos;
 
                 /*
+                
+
                 foreach (Dinosaur dinosaur in myDinos)
                 {
                     Console.WriteLine(dinosaur.Size);
                 }
+                
+
                 */
 
             }
+
+
+            
     }
 }

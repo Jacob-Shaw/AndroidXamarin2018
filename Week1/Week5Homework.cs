@@ -53,7 +53,7 @@ namespace ClassMaterial.Week1
                 //Use a delegate to clear fields using other delegates
                 ClearAll("");
 
-                //Show that the ClearAll dlegate worked
+                //Show that the ClearAll delegate worked
                 Console.WriteLine("Name: " + newCustomerInfo.Name);
                 Console.WriteLine("Address: " + newCustomerInfo.Address);
                 

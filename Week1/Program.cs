@@ -8,7 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Collections.Generic;
-
+using System.Diagnostics;
 
 namespace Week1
 {
@@ -31,12 +31,55 @@ namespace Week1
             bool exitNow = false;
 
 
+            bool MainTitle = true;
+
+            String TitleBar = "";
+            string message = "Please make a selection.";
+
+            void ChangeTitle()
+            {
+                if (MainTitle == true)
+                {
+                    TitleDisplay();
+
+                    async void TitleDisplay()
+                    {
+                        while (MainTitle == true)
+                        {
+                            Console.Title = "";
+
+                            for (int i = 0; i < message.Length; i++)
+                            {
+                                if (MainTitle == true)
+                                {
+                                    TitleBar += message[i];
+                                    Console.Title = TitleBar;
+                                    await Task.Delay(200);
+                                }
+                            }
+
+                            for (int i = 0; i < 5; i++)
+                            {
+                                if (MainTitle == true)
+                                Thread.Sleep(300);
+                            }
+                            
+                            TitleBar = "";
+
+                        }
+
+                    }
+                }
+            }
+
             
+
 
 
             //This will print the menu items
             while ( exitNow == false)
             {
+                ChangeTitle();
                 Console.ForegroundColor = ConsoleColor.White;
                 System.Console.WriteLine("     --------");
                 System.Console.WriteLine("       MENU");
@@ -49,9 +92,7 @@ namespace Week1
                 Console.ForegroundColor = ConsoleColor.Red;
                 System.Console.WriteLine("0. Exit");
 
-
-
-
+                
                 //Print Menu selections by number
                 while ( _selectionNumber < (NumberofWeeks * 2))
                 {
@@ -83,7 +124,6 @@ namespace Week1
                     //(min value, max value) min value will be met, but not max value
                     //   for random numbers
                     int getRandom = _luck.Next(1,(NumberofWeeks*2+1));
-
                     _choice = getRandom.ToString();
                 }
                 
@@ -100,7 +140,11 @@ namespace Week1
                     Console.Clear();
                 }
 
+                
 
+
+
+                Console.Title = _choice + ".";
 
                 /* This switch will execute the user selection made.
                     *****Be sure to update!*****  */
@@ -108,83 +152,133 @@ namespace Week1
                 {
 
                     case "0":
-                        //Week1Classwork.RunWeek1Classwork();
                         exitNow = true;
                         break;
 
                     case "1":
+                        MainTitle = false;
                         Week1Classwork.RunWeek1Classwork();
+                        Thread.Sleep(1000);
                         exitToMenu();
+
+                        MainTitle = true;
+                        
                         break;
 
                     case "2":
+                        MainTitle = false;
                         Week1Homework.RunWeek1Homework();
+                        Thread.Sleep(1000);
                         exitToMenu();
+                        MainTitle = true;
+                        
                         break;
 
                     case "3":
+                        MainTitle = false;
                         Week2Classwork.RunWeek2Classwork();
+                        Thread.Sleep(1000);
                         exitToMenu();
+                        MainTitle = true;
+                        
                         break;
 
                     case "4":
+                        MainTitle = false;
                         Week2Homework.RunWeek2Homework();
+                        Thread.Sleep(1000);
                         exitToMenu();
+                        MainTitle = true;
+                       
                         break;
 
                     case "5":
+                        MainTitle = false;
                         Week3Classwork.RunWeek3Classwork();
+                        Thread.Sleep(1000);
                         exitToMenu();
+                        MainTitle = true;
+                       
                         break;
 
                     case "6":
+                        MainTitle = false;
                         Week3Homework.RunWeek3Homework();
+                        Thread.Sleep(1000);
                         exitToMenu();
+                        MainTitle = true;
                         break;
 
                     case "7":
+                        MainTitle = false;
                         Week4Classwork.RunWeek4Classwork();
+                        Thread.Sleep(1000);
                         exitToMenu();
+                        MainTitle = true;
                         break;
 
                     case "8":
+                        MainTitle = false;
                         Week4Homework.RunWeek4Homework();
+                        Thread.Sleep(1000);
                         exitToMenu();
+                        MainTitle = true;
                         break;
 
                     case "9":
+                        MainTitle = false;
                         Week5Classwork.RunWeek5Classwork();
+                        Thread.Sleep(1000);
                         exitToMenu();
+                        MainTitle = true;
                         break;
 
                     case "10":
+                        MainTitle = false;
                         Week5Homework.RunWeek5Homework();
+                        Thread.Sleep(1000);
                         exitToMenu();
+                        MainTitle = true;
                         break;
 
                     case "11":
+                        MainTitle = false;
                         Week6Classwork.RunWeek6Classwork();
+                        Thread.Sleep(1000);
                         exitToMenu();
+                        MainTitle = true;
                         break;
 
                     case "12":
+                        MainTitle = false;
                         Week6Homework.RunWeek6Homework();
+                        Thread.Sleep(1000);
                         exitToMenu();
+                        MainTitle = true;
                         break;
 
                     case "13":
+                        MainTitle = false;
                         Week7Classwork.RunWeek7Classwork();
+                        Thread.Sleep(1000);
                         exitToMenu();
+                        MainTitle = true;
                         break;
 
                     case "14":
+                        MainTitle = false;
                         Week7Homework.RunWeek7Homework();
+                        Thread.Sleep(1000);
                         exitToMenu();
+                        MainTitle = true;
                         break;
 
                     // *****Add new selections above this line*****
 
                     default:
+                        MainTitle = false;
+                        Thread.Sleep(1000);
+                        MainTitle = true;
                         Console.Clear();
                         Console.ForegroundColor = ConsoleColor.Red ;
                         Console.WriteLine("\"\a" + _choice + "\"" + " is an invalid selection.");
@@ -192,7 +286,6 @@ namespace Week1
                         break;
                 }                
             }
-
         }
     }
 } 
