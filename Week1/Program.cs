@@ -24,7 +24,7 @@ namespace Week1
 
             //  *****Update the initialization value to match number of class weeks*****
             //Array of number of weeks of classwork
-            sbyte NumberofWeeks = 7;
+            sbyte NumberofWeeks = 8;
             
             //This variable will check to see if a choice from 
             //  the menu has been made
@@ -268,6 +268,22 @@ namespace Week1
                     case "14":
                         MainTitle = false;
                         Week7Homework.RunWeek7Homework();
+                        Thread.Sleep(1000);
+                        exitToMenu();
+                        MainTitle = true;
+                        break;
+
+                    case "15":
+                        MainTitle = false;
+                        Week8Classwork.RunWeek8Classwork();
+                        Thread.Sleep(1000);
+                        exitToMenu();
+                        MainTitle = true;
+                        break;
+
+                    case "16":
+                        MainTitle = false;
+                        Week8Homework.RunWeek8Homework();
                         Thread.Sleep(1000);
                         exitToMenu();
                         MainTitle = true;

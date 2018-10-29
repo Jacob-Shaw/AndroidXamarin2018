@@ -9,13 +9,7 @@ namespace ClassMaterial.Week1
         public static void RunWeek8Homework()
         {
 
-
-
-
-
-
-
-
+            Console.WriteLine("Unit Tests Added.");
 
         }
     }
